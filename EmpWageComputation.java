@@ -18,9 +18,16 @@ public class EmpWageComputation{
     Random random = new Random();
     int randomNum = random.nextInt(0, 4);
 
-    if (randomNum == 1) return "employee is present full time.";
-    else if (randomNum == 2) return "employee is present part time.";
-    else return "employee is absent.";
+    switch (randomNum) {
+      case 1:
+        return "employee is present full time";
+
+      case 2:
+        return "employee is present part time";
+
+      default:
+        return "employee is absent";
+    }
 
   }
 
@@ -28,7 +35,7 @@ public class EmpWageComputation{
 
    Byte empRatePerHr = 20;
    Byte hrsWorked = 0;
-   Byte fullTimeHrs = 8;   //
+   Byte fullTimeHrs = 8;   //assumed
    Byte partTimeHrs = 4;   //assumed
 
    if (str.contains("full time")) hrsWorked = fullTimeHrs;
